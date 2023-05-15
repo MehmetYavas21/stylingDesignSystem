@@ -58,15 +58,14 @@ Another benefit of using ChakraUI is that you don’t have to deal with having s
 
 An example is to give a height and width to the Box layout component:
 
-  import {Box} from "@chakra-ui/react"
-
-  <export const Layout = () => {
-    return (
-      <Box width="100%" height="100%">
-        {// The rest of your app}
-      </Box>
-      )
-  }>
+    import {Box} from "@chakra-ui/react"
+    <export const Layout = () => {
+       return (
+            <Box width="100%" height="100%">
+              {// The rest of your app}
+            </Box>
+            )
+      }>
   
 A full list of the Style Props can be found in Chakra’s documentation. You can import the components you need from @Chakra-ui/react and style them any way you want with these properties. Most Style Props have similar names to their CSS property name but you are also able to use shortcuts to speed up development even more. You can for example change the margin-top by using “mt” as prop or “my” to set the margin along the y-axis (top and bottom).
 
@@ -127,7 +126,7 @@ In this exercise, we will use Chakra UI, replace some of our components, and sty
 
 To install Chakra and its dependencies, use the following command in your project folder:
 
-      npm install @chakra-ui/react @emotion/react @emotion/styled framer-motion
+        npm install @chakra-ui/react @emotion/react @emotion/styled framer-motion
    
 ### Next, we have to add a [ChakraProvider](https://qag99.online/school/hvtrs8%2F-cjairc-wi%2Ccmm-ggtvilg%2Fsvaptgd-vktg-eukdg%230-rrmvkdgr%2Fsgtwp). 
 
@@ -135,7 +134,7 @@ This special component should wrap every other place where you want to use Chakr
 
 Open main.jsx and add the import for the ChakraProvider. 
 
-      import { ChakraProvider } from '@chakra-ui/react'
+        import { ChakraProvider } from '@chakra-ui/react'
       
       
 
