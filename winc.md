@@ -1,9 +1,9 @@
 # Learning goals
 
 After this lesson you will:
- Be able to install a design system for React and are able to use it in your projects.
- Be able to use Chakra components in your app. You are able to style those components.
- Be able to create a responsive design using the ChakraUI design system.
+- Be able to install a design system for React and are able to use it in your projects.
+- Be able to use Chakra components in your app. You are able to style those components.
+- Be able to create a responsive design using the ChakraUI design system.
 
 ## Styling with a design system
 At the end of this lesson, you will be able to install a design system for React and be able to use it in your projects.
