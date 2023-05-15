@@ -80,17 +80,17 @@ You can use these theme values by simply passing them as value to the style prop
 
 For colors you can pass values such as [Blue 200 or Blue 400](https://qag99.online/school/hvtrs8%2F-cjairc-wi%2Ccmm-dmcq%2Fqt%7Blgd%2Fs%7Bsveo%2Fvhgmg%23%60lwe) as follows:
 
-  <<Heading color= "blue.200">
-    Hello
-  </Heading>>
+    <Heading color= "blue.200">
+      Hello
+    </Heading>
   
  ## Typographi
  
  For texts, you would most likely change the [size and weight](https://qag99.online/school/hvtrs8%2F-cjairc-wi%2Ccmm-dmcq%2Fqt%7Blgd%2Fs%7Bsveo%2Fvhgmg%23vyroercpjy) most often. You can do so as follows: 
  
-    <<Heading size= "2xl" fontWeight="medium" color="blue.200">
+    <Heading size= "2xl" fontWeight="medium" color="blue.200">
         Hello
-    </Heading>>
+    </Heading>
     
 ## Spacing
   
