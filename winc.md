@@ -234,3 +234,41 @@ If you feel like you need a bit more practice before you start building your own
 
 When you want to use the **<Button/>** component in a way similar to how you use the HTML **<button>** tag, where you put text between the text instead of passing it as a prop, you can use the ‘children’ prop. Read more about it below.
 
+## The `children` Prop
+
+Each React component receives a prop that we haven’t spoken about before. It contains precisely the stuff that goes between a component’s opening and closing tags. Until now, we have mostly been writing self-closing tags when we want to render a component, but we can also write them as `<Component></Component>`. The children’s prop contains everything that goes between these tags. It can be simple text, HTML elements, or other React components. 
+
+Now, in order to display the children on the page, you have to use `{props.children}` inside the JSX you return from the component. You can also destructure children from props in the function signature, in which case you can simply write `{children}`. You place this in the position where you want to display them.
+    
+                export const Button = ({onClick, ...props}) => (
+                        <CButton colorScheme="teal" onClick={onClick} {...props}>
+                            {props.children}
+                        </CButton>
+                 );
+    
+**NOTE:** When you are importing a Chakra component that has the same name as your UI component, you can import the Chakra component with a different alias. E.g.
+    
+                import { Button as CButton } from '@chakra-ui/react';
+    
+    
+### Extra bonus!
+
+In the DrinkItems component you use a SimpleGrid, Stack or Flex to place the items in columns and rows instead of just underneath each other. 
+    
+ ## Now comes the real challenge! It is your turn to add something to the page using Chakra. 
+
+We want to show an alert dialog when a user selects a drink in our cafe. In Chakra, the Modal consists of several components that we can use together to create a box shown on top of the page that shows some information, usually along with some buttons. A common use case for a modal is to ask for confirmation from the user, which is exactly what we would like, as we noticed our customers sometimes click a drink by mistake.
+
+## Requirements:
+
+▶︎ Study the documentation in the link above.
+▶︎ We like the customer to be able to confirm their order.
+▶︎ After clicking on a drink, show a modal that displays their order
+▶︎  The modal also asks them to confirm their order. For now, the button doesn't have to do anything.
+▶︎  The modal also has a button to cancel/close the modal.
+    
+    
+    
+    
+## !! [SOLUTION](https://github.com/WincAcademy/react-exercise-solutions/blob/97bd11ee76b13e3e8d351ba455f5551b9591e615/chakra-exercise-solution/chakra-exercise-solution/src/App.jsx)
+    
