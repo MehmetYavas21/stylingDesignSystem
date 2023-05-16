@@ -272,3 +272,9 @@ We want to show an alert dialog when a user selects a drink in our cafe. In Chak
     
 ## !! [SOLUTION](https://github.com/WincAcademy/react-exercise-solutions/blob/97bd11ee76b13e3e8d351ba455f5551b9591e615/chakra-exercise-solution/chakra-exercise-solution/src/App.jsx)
     
+    
+### Tutorial
+If you would like to practice more, we recommend this tutorial on [egghead.io](https://qag99.online/school/hvtrs8%2F-eegjecd%2Cim%2Fneqsmnq%2Fpeccv-%60uklf-c-na%7Bowt%2Fwktj-vhg-aoltcilep-dlgx%2Fald%2Fvqtcci-aoopmngnv-kn%2Fcjairc-wi).
+    
+    
+    
