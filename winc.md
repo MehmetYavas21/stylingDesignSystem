@@ -126,7 +126,7 @@ In this exercise, we will use Chakra UI, replace some of our components, and sty
 ## Instructions
 
 
-To install Chakra and its dependencies, use the following command in your project folder:
+- To install Chakra and its dependencies, use the following command in your project folder:
 
         npm install @chakra-ui/react @emotion/react @emotion/styled framer-motion
    
@@ -134,10 +134,103 @@ To install Chakra and its dependencies, use the following command in your projec
 
 This special component should wrap every other place where you want to use Chakra. Place this all the way at the root of our component tree in main.jsx.
 
-Open main.jsx and add the import for the ChakraProvider. 
+- Open main.jsx and add the import for the ChakraProvider. 
 
         import { ChakraProvider } from '@chakra-ui/react'
       
-      
+- Wrap the <App /> inside the jsx in a <ChakraProvider></ChakraProvider>.
 
+            <ChakraProvider>
+                <App />
+            </ChakraProvider>
+
+When you run the app, you will notice it looks different. The ChakraProvider provides a default theme that overrides the existing (default) styling. You can delete the index.css and remove the import from main.jsx, as the default theme is overriding this styling anyway.
+
+## Let’s import our first ChakraUI component <Heading> in the <App /> component.
+
+- Go to App.jsx and copy the following code to import the component or use auto-import:
+
+               import { Heading } from '@chakra-ui/react'
+
+- Replace the <h1> tag with <Heading>
+
+- Add some margin to the bottom by using the marginBottom or mb prop and pass an appropriate value: e.g. ‘2rem” or 8 (which the default theme translates to 2rem).
+    
+- Change the size of the text by using the fontSize prop. Pass a value such as “lg” “xl”, “2xl” or “3xl”.
+
+- Change the color by using the “color” prop and use a value from the default theme, such as e.g. “blue.200”, “blue.400”, “green.200”, etc.
+
+    !! Stuck: 
+    
+                <Heading mb={8} fontSize="2xl" color="blue.400">
+                    {greeting}
+                </Heading>
+  
+ ## Right now, we have a DrinkSearch component rendering a TextInput and a list of DrinkItem components. Let’s start with the simplest of the two components, the TextInput.
+
+- We can replace the input tag inside the TextInput component with [Chakra’s Input component](https://qag99.online/school/hvtrs8%2F-cjairc-wi%2Ccmm-dmcq%2Faoopmngnvs-ilpwt-uqaee). Import this Chakra component into the TextInput.jsx file, and use it instead of the HTML <input> element. You can remove the class name, related CSS import, and file as well.
+
+You can still pass the onChange prop in the same way as you did before.
+
+## !! ℹ️ Did you choose the default styling?
+
+You may choose the default styling, play around with its variants, e.g. variant='flushed' or try to recreate the styling you have made before by following the steps below:
+
+1. Open the TextInput.css file and review the existing styling.
+
+2. For each style property, do the following:
+
+    - Find the Style prop matching your previous styling.
+
+    - Add the Style prop to the component, with the correct value
+
+    - Ensure that the component still looks the same on the page.
+    
+You might wonder why we are importing a complete component into our UI component. Even though you can style Chakra components any way you want, it can sometimes still be useful to have your own UI components that import the Chakra component because this allows you to apply a default styling that you would like to keep the same across your app. 
+
+## But how can I still use styling props?
+
+You can still pass any styling prop you want to your own UI component by using the spread operator:
+
+                export const TextInput = ({changeFn, ...props}) => (
+                        <Input variant="flushed" onChange={changeFn} {...props} />
+                    );
+    
+In this way, you can pass props such as margin to the TextInput component. In this example, you want to ensure you pass the additional props after passing the onChange prop, as this is the order defined in the destructured object parameter.
+
+Try it out yourself by changing the width or margin-bottom when using the <TexInput /> component in DrinkSearch.jsx! 
+    **!!Hint:**
+            <TextInput changeFn={handleChange} w={300} mb={10}/>
+  
+Repeat the same steps for the DrinkItem component. Note that this component is more complex. It has a <button> with 2 other elements inside it, so each of these has to be replaced by a Chakra component. Find the Chakra component in the [documentation](https://qag99.online/school/hvtrs8%2F-cjairc-wi%2Ccmm-dmcq%2Faoopmngnvs) that would be the best option to replace the component or HTML element you want to replace. 
+    
+- As the <Button /> component from Chakra, isn’t the best option to fit in an image, you can simply use a container alternative such as [<Center>](https://qag99.online/school/hvtrs8%2F-cjairc-wi%2Ccmm-dmcq%2Faoopmngnvs-cgnvep), use the [cursor](https://qag99.online/school/hvtrs8%2F-dgvglmpgr%2Cmmzklna%2Copg-el-WS-dmcq%2FUe%60%2FASQ%2Faupsmr) css property, and change it to pointer. 
+
+- Use [<Image>](https://qag99.online/school/hvtrs8%2F-cjairc-wi%2Ccmm-dmcq%2Faoopmngnvs-ioaee) to replace the <img /> element
+
+- Use [<Text>](https://qag99.online/school/hvtrs8%2F-cjairc-wi%2Ccmm-dmcq%2Faoopmngnvs-tgxv) to replace the <p> element. 
+
+- Make sure that the correct styles are applied to the correct components and elements.
+
+We encourage you to experiment a little bit to make it look more pretty so you become more familiar with Chakra. You can style our search results a bit more and add some proper layouts there, for example. 
+
+
+- Don’t forget to delete the css file and import.
+    
+    
+    **!! STUCK** 
+    
+            export const DrinkItem = ({drink, onClick}) => {
+                    return (
+                            <Center gap={8} cursor={'pointer'} onClick={() => onClick(drink)}>
+                                <Image src={drink.Url} w={50} h={50} alt={drink.alt} />
+                                <Text fontWeight={'450'}> {drink.name}</Text>
+                            </Center>
+                            );
+                    };
+    
+    
+If you feel like you need a bit more practice before you start building your own component with Chakra, feel free also to convert the <Button />, <DrinkSearch />, <App />, and/or <DrinkItems /> components. 
+
+When you want to use the <Button /> component in a way similar to how you use the HTML <button> tag, where you put text between the text instead of passing it as a prop, you can use the ‘children’ prop. Read more about it below.
 
