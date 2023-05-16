@@ -1,4 +1,6 @@
-# Learning goals
+# Styling with a design system
+
+## Learning goals
 
 After this lesson you will:
 - Be able to install a design system for React and are able to use it in your projects.
