@@ -230,7 +230,7 @@ We encourage you to experiment a little bit to make it look more pretty so you b
                     };
     
     
-If you feel like you need a bit more practice before you start building your own component with Chakra, feel free also to convert the <Button />, <DrinkSearch />, <App />, and/or <DrinkItems /> components. 
+If you feel like you need a bit more practice before you start building your own component with Chakra, feel free also to convert the <Button/>, <DrinkSearch/>, <App/>, and/or <DrinkItems/> components. 
 
-When you want to use the <Button /> component in a way similar to how you use the HTML <button> tag, where you put text between the text instead of passing it as a prop, you can use the ‘children’ prop. Read more about it below.
+When you want to use the **<Button/>** component in a way similar to how you use the HTML **<button>** tag, where you put text between the text instead of passing it as a prop, you can use the ‘children’ prop. Read more about it below.
 
