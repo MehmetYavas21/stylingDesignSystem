@@ -309,4 +309,26 @@ You can interpret the syntax as follows:
 
 Let’s show some React code as example:
 
+            <Flex flexDirection={{base:'column', sm:'row'}} gap={8}>
+                <Text fontSize={{base:24, sm:40, md:56}} color="blue.300">
+                    Im blue
+                </Text>
+                <Text fontSize={{base:24, sm:40, md:56}} color="green.300">
+                    Im green
+                </Text>
+            </Flex>
+
+Here we have a responsive flexbox that is vertical on mobile and horizontal on larger screens. We also have text that becomes larger on different screens:
+    
+    !! ![IMAGE Video]()
+    
+You do not necessarily have to define every breakpoint in the object. The previously defined size will be used when you don’t define a breakpoint. For example, when you define a size for "base" and "lg", the size defined for "base" will remain the same until the breakpoint for "lg" (62em) has reached. After reaching the "lg" breakpoint, it will remain the defined size for "lg". 
+
+## Array syntax
+
+You can also use arrays as values for style props. Chakra maps the array of items to the theme breakpoints in ascending order. This means that the first array item will start from 0em upwards, like the base key in the object syntax. The second item will start from 30em and upwards (sm). The third item starts from 48em and upwards (md) and so on.
+
+
+The default breakpoints translate to the following array syntax:
+    
     
