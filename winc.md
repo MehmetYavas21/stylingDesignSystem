@@ -274,7 +274,39 @@ We want to show an alert dialog when a user selects a drink in our cafe. In Chak
     
     
 ### Tutorial
-If you would like to practice more, we recommend this tutorial on [egghead.io](https://qag99.online/school/hvtrs8%2F-eegjecd%2Cim%2Fneqsmnq%2Fpeccv-%60uklf-c-na%7Bowt%2Fwktj-vhg-aoltcilep-dlgx%2Fald%2Fvqtcci-aoopmngnv-kn%2Fcjairc-wi).
+If you would like to practice more, we recommend this tutorial on [egghead.io](https://qag99.online/school/hvtrs8%2F-eegjecd%2Cim%2Fneqsmnq%2Fpeccv-%60uklf-c-na%7Bowt%2Fwktj-vhg-aoltcilep-dlgx%2Fald%2Fvqtcci-aoopmngnv-kn%2Fcjairc-wi). 
     
+## Responsiveness
     
+ChakraUI makes it easy to create responsive designs.
+
+It will take some time to get used to it, but once you have learned it, you will save up a lot of time and find it easier to read the corresponding code. 
+
+Normally, you will need to manually add @media queries in your CSS files to make your designs responsive. With ChakraUI, you can provide object and array values as props to add mobile-first responsive styles. We will show you some examples very soon. First, Chakra has provided some default theme settings with some set breakpoints:
+
+
+                    const breakpoints = { 
+                        sm:'30em',
+                        md: '48em',
+                        lg:'62em',
+                        xl:'80em',
+                        '2xl':'96em',
+                    }
+    
+As a guideline, you can keep in mind that “sm” is approximately the size of a mobile screen, “md” is approximately the size of a tablet screen and “lg” is approximately the size of laptop and desktop screens. 
+
+To implement these breakpoints, you can use the object or array syntax. We pass these syntaxes as value to a property to declare how they will look like on mobile or larger screens for example.
+    
+ ## Object syntax
+
+With the object syntax, you can use the breakpoint aliases as key names and add CSS values to pair with. Next to the breakpoint aliases, you can use “base” as a key name, showing the CSS rules from 0em and upwards. So essentially, any screen until the next defined breakpoint. As the system is supposed to be mobile-first, you can use “base” to create your mobile design.
+
+You can interpret the syntax as follows:
+▶︎  base: From 0em upwards
+▶︎ sm: From 30em upwards
+▶︎  md: From 48em upwards
+▶︎  lg: From 62em upwards
+
+Let’s show some React code as example:
+
     
