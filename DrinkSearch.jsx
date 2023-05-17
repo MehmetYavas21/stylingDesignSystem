@@ -17,7 +17,7 @@ export const DrinkSearch = ({ clickFn }) => {
   return (
     <>
       <label>Search for drinks:</label>
-      <TextInput onChange={handleChange} w={200} mb={8} />
+      <TextInput onChange={handleChange} w={200} mb={8} color='teal' placeholder='custom placeholder' _placeholder={{ color: 'inherit' }} />
       <DrinkList clickFn={clickFn} drinks={matchedDrinks} />
     </>
   );
