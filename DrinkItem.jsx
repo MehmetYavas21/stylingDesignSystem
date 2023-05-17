@@ -2,7 +2,8 @@ import { Center, Image, Text, WrapItem } from '@chakra-ui/react';
 
 export const DrinkItem = ({ drink, clickFn }) => {
   return (
-    <WrapItem>
+    // you may try later to add some display (flex or grid) to WrapItem
+    <WrapItem >
       <Center gap={8} cursor={'pointer'} onClick={() => clickFn(drink)}>
         <Image
           src={drink.imgUrl}
@@ -11,7 +12,7 @@ export const DrinkItem = ({ drink, clickFn }) => {
           borderRadius={'xl'}
           alt={drink.alt}
         />
-        <Text fontWeight={'450'}>{drink.name}</Text>
+        <Text fontWeight={'450'} as='samp'>{drink.name}</Text>
       </Center>
     </WrapItem>
   );
