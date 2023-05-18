@@ -427,4 +427,68 @@ This is what the result should look like on mobile screens:
     
     ![open giff iage](add it)
     
-    
+**HINT-1** 
+- ⚠️ How to change the modal size?
+You can use the modal prop ‘size’ to change the size of the modal. It takes values such as ‘full’ and ‘md’.
+**HINT-2** 
+- ⚠️ How to center the text?
+You can create a flexbox and change the height and alignItems or justifyContent props to adept the values so that it fits the requirements.
+**HINT-3**
+                                ...
+                                <Modal size={['full' , 'md']} isOpen={isOpen} onClose={onClose}>
+                                    <ModalOverlay />
+                                    <ModalContent>
+                                      <ModalHeader>Confirm your order</ModalHeader>
+                                      <ModalCloseButton />
+                                      <ModalBody
+                                        height= {['full' , 'fit-content']}
+                                        display="flex"
+                                        justifyContent= "center"
+                                        alignItems= {['center' , 'flex-start']}
+                                        flexDir= "column"
+                                      >
+                                ...
+
+## Bonus
+
+If you haven’t done so already, you can implement Chakra components in <DrinkItems /> and use SimpleGrid, Stack, or Flex to place the items in columns and rows instead of just underneath each other for screens larger than mobile.
+
+On mobile screens, we would like the items to be displayed stacked underneath each other.
+
+The result should look similar to the following example:
+                                          
+        ! !DON'T FORGET to add [image/giff](download)
+
+!**STUCK?**
+                                          
+Have a sneak peak at <DrinkItem /> from the solution code:
+
+                                  import { Flex } from @chakra-ui/react;
+                                  import { DrinkItem } from ./DrinkItem;
+
+                                  export const DrinkItems = ({drinks, onClick}) => {
+                                      return (
+                                          <Flex
+                                            gap= {16}
+                                            w={['full' , '75%']}
+                                            flexWrap= "wrap"
+                                            flexDir={['column' , 'row']}
+                                            justify="center"
+                                            alignItems="center"
+                                          >
+                                          {drinks.map((drink) => (
+                                              <DrinkItem key={drink.id} drink={drink} onClick={onClick}/>
+                                          ))}
+                                          </Flex>
+                                          )
+                                  }
+
+## Grow!
+
+It will take some time to get used to this new system. We hope you can see some potential benefits of a design system like this compared to having everything in separate stylesheets.
+
+[Documantation](https://chakra-ui.com/docs/styled-system/responsive-styles)
+
+[Solutition](https://qag99.online/school/hvtrs8%2F-gktju%60.aoo%2FUilcCccdgm%7B%2Fpeccv-gxgraiqe%2Fsmlwtkols-tpeg%2Foakn-cjairc-peqpmnqite%2Fezepcksg-qonuvimn)
+                                          
+                                          
