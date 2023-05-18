@@ -261,11 +261,11 @@ We want to show an alert dialog when a user selects a drink in our cafe. In Chak
 
 ## Requirements:
 
-▶︎ Study the documentation in the link above.
-▶︎ We like the customer to be able to confirm their order.
-▶︎ After clicking on a drink, show a modal that displays their order
-▶︎  The modal also asks them to confirm their order. For now, the button doesn't have to do anything.
-▶︎  The modal also has a button to cancel/close the modal.
+- ▶︎ Study the documentation in the link above.
+- ▶︎ We like the customer to be able to confirm their order.
+- ▶︎ After clicking on a drink, show a modal that displays their order
+- ▶︎  The modal also asks them to confirm their order. For now, the button doesn't have to do anything.
+- ▶︎  The modal also has a button to cancel/close the modal.
     
     
     
@@ -302,10 +302,10 @@ To implement these breakpoints, you can use the object or array syntax. We pass 
 With the object syntax, you can use the breakpoint aliases as key names and add CSS values to pair with. Next to the breakpoint aliases, you can use “base” as a key name, showing the CSS rules from 0em and upwards. So essentially, any screen until the next defined breakpoint. As the system is supposed to be mobile-first, you can use “base” to create your mobile design.
 
 You can interpret the syntax as follows:
-▶︎  base: From 0em upwards
-▶︎ sm: From 30em upwards
-▶︎  md: From 48em upwards
-▶︎  lg: From 62em upwards
+- ▶︎  base: From 0em upwards
+- ▶︎ sm: From 30em upwards
+- ▶︎  md: From 48em upwards
+- ▶︎  lg: From 62em upwards
 
 Let’s show some React code as example:
 
@@ -330,5 +330,101 @@ You can also use arrays as values for style props. Chakra maps the array of item
 
 
 The default breakpoints translate to the following array syntax:
+    
+    
+                    // Default breakpoints
+                    const breakpoints = { 
+                        sm:'30em',
+                        md: '48em',
+                        lg:'62em',
+                        xl:'80em',
+                        '2xl':'96em',
+                    }
+    
+    
+                    // Transforms to the following array syntax 
+                    const breakpoints=['0em' , '30em' , '48em' , '62em' , '80em' , '96em']
+    
+We can translate our previous object example to the array syntax in the following way:
+
+                    <Flex flexDirection={{base:'column', sm:'row'}} gap={8}>
+                        <Text fontSize={{base:24, sm:40, md:56}} color="blue.300">
+                            Im blue
+                        </Text>
+                        <Text fontSize={{base:24, sm:40, md:56}} color="green.300">
+                            Im green
+                        </Text>
+                    </Flex>
+    
+In the array syntax, we can achieve the same styling with the following code:
+
+                        <Flex flexDirection={['column', 'row']} gap={8}>
+                            <Text fontSize={[24, 40, 56]} color="blue.300">
+                                Im blue
+                            </Text>
+                            <Text fontSize={[24, 40, 56]}  color="green.300">
+                                Im green
+                            </Text>
+                        </Flex>
+    
+
+**!!Note**
+
+Unfortunately, when you use the array syntax, you cannot skip a breakpoint. For example, you can use ‘base’, ‘md’ and ‘lg’ as breakpoints in the object syntax. In the array syntax, we cannot replicate this because it follows an ascending order meaning that we cannot skip the ‘sm’ breakpoint.
+
+Check out the full responsive style documentation [here](https://chakra-ui.com/docs/styled-system/responsive-styles).
+    
+    **AN EXAMPLE from chakra website:**
+This works for every style prop in the theme specification, which means you can change the style of most properties at a given breakpoint.
+
+
+    
+                      <>
+                          <Box
+                            height={{
+                              base: '100%', // 0-48em
+                              md: '50%', // 48em-80em,
+                              xl: '25%', // 80em+
+                            }}
+                            bg='teal.400'
+                            width={[
+                              '100%', // 0-30em
+                              '50%', // 30em-48em
+                              '25%', // 48em-62em
+                              '15%', // 62em+
+                            ]}
+                          />
+                          {/* responsive font size */}
+                          <Box fontSize={['sm', 'md', 'lg', 'xl']}>Font Size</Box>
+                          {/* responsive margin */}
+                          <Box mt={[2, 4, 6, 8]} width='full' height='24px' bg='tomato' />
+                          {/* responsive padding */}
+                          <Box bg='papayawhip' p={[2, 4, 6, 8]}>
+                            Padding
+                          </Box>
+                        </>
+    
+    
+## Exercise: Responsive design with Chakra
+    
+At the end of this exercise, you will be able to create a responsive design using the ChakraUI design system.
+
+**Description**
+    
+It’s time to make our app a bit more responsive. Currently, the modal is not as mobile-friendly as we would like it to be. We would prefer the modal to take up the full width and height of the screen on mobile phones and remain as it is on bigger screens.
+
+## Instructions
+
+Implement the following requirements:
+
+- On mobile, the modal is full-screen. On other devices, not. Use the size prop on <Modal />
+
+https://chakra-ui.com/docs/components/modal#modal-sizes(opens in a new tab)
+
+- On mobile, align the modal text towards the center. On larger screens, we would like it to remain as it is (to the left).
+
+This is what the result should look like on mobile screens:
+    
+    ![open giff iage](add it)
     
     
