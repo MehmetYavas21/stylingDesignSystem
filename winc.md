@@ -490,5 +490,58 @@ It will take some time to get used to this new system. We hope you can see some 
 [Documantation](https://chakra-ui.com/docs/styled-system/responsive-styles)
 
 [Solutition](https://qag99.online/school/hvtrs8%2F-gktju%60.aoo%2FUilcCccdgm%7B%2Fpeccv-gxgraiqe%2Fsmlwtkols-tpeg%2Foakn-cjairc-peqpmnqite%2Fezepcksg-qonuvimn)
+
+## Portfolio exercise: part 2
                                           
+At the end of this exercise, you can use loops to create a list of components, use click event handlers and work with a design system. 
+
+**Description**
+
+Let’s practice a bit more to prepare you for the final project. We will put all the lessons of this module into use.
+
+You will continue where you left off in the last portfolio exercise. We recommend starting with the 1st part of the exercise if you haven’t done so already. You can find this exercise in the State lesson(opens in a new tab).
+
+In this 2nd half of the exercise, you will make the app more dynamic by displaying a list of portfolio items in <PortfolioPage /> and making the items clickable, which in turn will show you the <PortfolioItemPage /> with more details. You will now also apply more styling to the app to make it look all nice and neat.
+
+Here is an example of how it could look like:
                                           
+                                          ![imgae-giff](fromfiles)
+
+## Instructions
+
+- Install ChakraUI by typing the following in your terminal (in your project folder):
+
+                    npm install @chakra-ui/react @emotion/react @emotion/styled framer-motion
+
+- Open main.jsx and add the import for the ChakraProvider.
+
+                    import { ChakraProvider } from '@chakra-ui/react';
+
+- Wrap the <App /> inside the jsx in a <ChakraProvider></ChakraProvider>
+
+- You can delete any .css files
+
+- Now let's start writing some code. Create a new **PortfolioItemCard** component that you will use to display a single portfolio item as part of a list. Make it display the image, skill tags, and summary. You can, for example, use the [Chakra’s <Tag>](https://qag99.online/school/hvtrs8%2F-cjairc-wi%2Ccmm-dmcq%2Faoopmngnvs-tcg) component for the skills.
+
+- Style the component with ChakraUI. 
+
+Here is an example of what it could look like. You don’t have to copy the design. Feel free to create your own design.
+                                          
+                                          ![image gif](DOWNLOAD the image)
+                                          
+- In PortfolioPage.jsx, import the list of portfolioItems from data.js.
+
+- Render the list and for each item, render a PortfolioItemCard.
+
+- Make the items clickable and change the selectedItem state, so that the user sees the <PortfolioItemPage /> page with the corresponding item. You can accomplish this by passing setSelectedItem as prop to the right components.
+
+- In PortfolioItemPage.jsx, display the skills from the item prop as well and use ChakraUI to create a nice design.
+
+- Style the <PortfolioItemPage /> using ChakraUI as well.
+
+- Create a button on this page that lets the user navigate back to the overview. You can use the setSelectedItem and set it to empty when clicking on this button. Don’t forget to pass it as a prop.
+Example:
+
+                        <Button onClick={() => clickFn()}>
+                            
+                            
